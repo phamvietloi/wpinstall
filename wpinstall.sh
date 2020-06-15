@@ -54,7 +54,15 @@ check_install mysql-server
 echo "Deleting temporary configuration of mysql"
 debconf-communicate mysql-server <<< 'PURGE' &>> $log_file
 
-check_install php7.0-fpm 
+# install PHP 7.2
+
+echo "Add PHP Repo..."
+apt install software-properties-common
+add-apt-repository ppa:ondrej/php
+apt update
+
+
+check_install php7.2-fpm 
 check_install php-mysql
 
 # don't execute closest php file, if not found
