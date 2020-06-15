@@ -58,7 +58,7 @@ debconf-communicate mysql-server <<< 'PURGE' &>> $log_file
 
 echo "Add PHP Repo..."
 apt install software-properties-common
-add-apt-repository ppa:ondrej/php
+add-apt-repository ppa:ondrej/nginx-mainline
 apt update
 
 
